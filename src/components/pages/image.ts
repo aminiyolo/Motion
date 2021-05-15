@@ -1,26 +1,23 @@
-export class ImageComponent {
-  private element: HTMLElement;
+import { BaseComponent } from "./base.js";
+
+export class ImageComponent extends BaseComponent<HTMLElement> {
   constructor(title: string, url: string) {
-    const template = document.createElement("template");
-    template.innerHTML = `<section class="image">
+    super(`<section class="image">
     <div class="image__holder">
       <img class="image" />
     </div>
-    <p class="image__title"></p>
-  </section>`;
+    <h2 class="image__title"></h2>
+  </section>`);
 
-    this.element = template.content.firstElementChild! as HTMLElement;
     const imageElement = this.element.querySelector(
       ".image"
     )! as HTMLImageElement;
     imageElement.src = url;
     imageElement.alt = title;
+
     const titleElement = this.element.querySelector(
       ".image__title"
-    )! as HTMLParagraphElement;
+    )! as HTMLHeadElement;
     titleElement.textContent = title;
-  }
-  attachTo(parent: HTMLElement, position: InsertPosition = "afterbegin") {
-    parent.insertAdjacentElement(position, this.element);
   }
 }
