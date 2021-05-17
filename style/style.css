@@ -92,13 +92,13 @@ body {
   background-color: var(--document-bg-color);
 }
 
-.document::-webkit-scrollbar {
+.contents__container::-webkit-scrollbar {
   /* Safari and Chrome */
   background-color: var(--bg-accent-color);
   width: 6px;
 }
 
-.document::-webkit-scrollbar-thumb {
+.contents__container::-webkit-scrollbar-thumb {
   /* Safari and Chrome */
   background-color: var(--accent-color);
 }
