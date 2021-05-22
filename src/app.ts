@@ -4,6 +4,7 @@ import { ImageComponent } from "./components/pages/image.js";
 import { Note } from "./components/pages/note.js";
 import { PageComponent, Composable } from "./components/pages/page.js";
 import { Video } from "./components/pages/video.js";
+import { InputDialog } from "./components/dialog/dialog.js";
 
 class App {
   private readonly page: Component & Composable;
@@ -25,6 +26,21 @@ class App {
       "https://www.youtube.com/watch?v=6UsqalA78Wk&t=11108s"
     );
     this.page.appendChild(video);
+
+    const imgBtn = document.querySelector("#imageBtn")! as HTMLButtonElement;
+    imgBtn.addEventListener("click", () => {
+      const dialog = new InputDialog();
+
+      dialog.setOnCloseListener(() => {
+        dialog.removeFrom(document.body);
+      });
+
+      dialog.setOnCloseListener(() => {
+        dialog.removeFrom(document.body);
+      });
+
+      dialog.attachTo(document.body);
+    });
   }
 }
 

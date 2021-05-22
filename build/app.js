@@ -3,6 +3,7 @@ import { ImageComponent } from "./components/pages/image.js";
 import { Note } from "./components/pages/note.js";
 import { PageComponent } from "./components/pages/page.js";
 import { Video } from "./components/pages/video.js";
+import { InputDialog } from "./components/dialog/dialog.js";
 class App {
     constructor(root) {
         this.page = new PageComponent();
@@ -15,6 +16,17 @@ class App {
         this.page.appendChild(task);
         const video = new Video("title", "https://www.youtube.com/watch?v=6UsqalA78Wk&t=11108s");
         this.page.appendChild(video);
+        const imgBtn = document.querySelector("#imageBtn");
+        imgBtn.addEventListener("click", () => {
+            const dialog = new InputDialog();
+            dialog.setOnCloseListener(() => {
+                dialog.removeFrom(document.body);
+            });
+            dialog.setOnCloseListener(() => {
+                dialog.removeFrom(document.body);
+            });
+            dialog.attachTo(document.body);
+        });
     }
 }
 new App(document.querySelector(".contents__container"));
