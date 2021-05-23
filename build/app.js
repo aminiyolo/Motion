@@ -12,7 +12,7 @@ class App {
         this.page.attachTo(root);
         const image = new ImageComponent("image", "https://picsum.photos/200/300");
         this.page.appendChild(image);
-        const video = new Video("title", "https://www.youtube.com/watch?v=6UsqalA78Wk&t=11108s");
+        const video = new Video("video", "https://www.youtube.com/watch?v=6UsqalA78Wk&t=11108s");
         this.page.appendChild(video);
         const imgBtn = document.querySelector("#imageBtn");
         imgBtn.addEventListener("click", () => {

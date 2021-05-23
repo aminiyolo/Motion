@@ -24,7 +24,7 @@ class App {
     // this.page.appendChild(task);
 
     const video = new Video(
-      "title",
+      "video",
       "https://www.youtube.com/watch?v=6UsqalA78Wk&t=11108s"
     );
     this.page.appendChild(video);
