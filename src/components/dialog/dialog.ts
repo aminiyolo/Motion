@@ -16,7 +16,7 @@ export class InputDialog
         <div class="dialog__container">
           <button class="close">&times;</button>
           <div id="dialog__body"></div>
-          <button class="dialog__submit">ADD</button>
+          <button class="dialog__add">ADD</button>
         </div>
       </section>
     `);
@@ -26,9 +26,7 @@ export class InputDialog
       this.closeListener && this.closeListener();
     };
 
-    const addBtn = this.element.querySelector(
-      ".dialog__submit"
-    )! as HTMLElement;
+    const addBtn = this.element.querySelector(".dialog__add")! as HTMLElement;
     addBtn.onclick = () => {
       this.addListener && this.addListener();
     };

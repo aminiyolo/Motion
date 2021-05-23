@@ -6,7 +6,7 @@ export class InputDialog extends BaseComponent {
         <div class="dialog__container">
           <button class="close">&times;</button>
           <div id="dialog__body"></div>
-          <button class="dialog__submit">ADD</button>
+          <button class="dialog__add">ADD</button>
         </div>
       </section>
     `);
@@ -14,7 +14,7 @@ export class InputDialog extends BaseComponent {
         closeBtn.onclick = () => {
             this.closeListener && this.closeListener();
         };
-        const addBtn = this.element.querySelector(".dialog__submit");
+        const addBtn = this.element.querySelector(".dialog__add");
         addBtn.onclick = () => {
             this.addListener && this.addListener();
         };
